@@ -2173,7 +2173,6 @@ class RecipeView extends (0, _viewDefault.default) {
             const btn = e.target.closest(".btn--update-servings");
             if (!btn) return;
             const updateTo = +btn.dataset.updateTo;
-            console.log(btn, updateTo);
             handler(updateTo);
         });
     }
