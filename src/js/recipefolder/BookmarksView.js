@@ -1,6 +1,6 @@
 import Preview from './previewView';
 import View from './View';
-console.log(Preview);
+
 class BookMarksView extends View {
   _parentElement = document.querySelector('.bookmarks__list');
   _errorMessage = 'No Bookmarks yet. Find a nice recipe and bookmark it';

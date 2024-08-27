@@ -1,4 +1,3 @@
-import { async } from 'regenerator-runtime';
 import { TIMED_OUT } from './config';
 const timeout = function (s) {
   return new Promise(function (_, reject) {
@@ -23,7 +22,8 @@ export const AJAX = async function (url, uploadData = undefined) {
       : fetch(url);
     const response = await Promise.race([fetchPro, timeout(TIMED_OUT)]);
     const fetchedData = await response.json();
-    if (!response.ok) throw new Error(`${data.message} (${response.status})`);
+    if (!response.ok)
+      throw new Error(`${fetchedData.message} (${response.status})`);
     return fetchedData;
   } catch (err) {
     alert(err);
